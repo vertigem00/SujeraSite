@@ -1,0 +1,100 @@
+@font-face {
+    font-family: prompt;
+    src: url(font/VCR_OSD_MONO.ttf);
+}
+body {
+    background-color: rgb(15, 15, 15);
+    color: white;
+    overflow: hidden;
+}
+
+* {box-sizing: border-box}
+    
+    /* Style the tab */
+    .tab {
+        position: relative;
+        margin: auto;
+        top: 190px;
+        border: none;
+        width: 25%;
+        height: 300px;
+        transition: 0.5s;
+        z-index: 1;
+        font-family: prompt;
+    }
+    
+    /* Style the buttons inside the tab */
+    .tab button {
+        display: block;
+        background-color: inherit;
+        color: white;
+        padding: 4x 12px;
+        width: 100%;
+        border: none;
+        outline: none;
+        text-align: left;
+        cursor: pointer;
+        transition: 0.3s;
+        font-size: 15px;
+        font-family: prompt;
+        float: left;
+       
+    }
+    
+    /* Change background color of buttons on hover */
+    .tab button:hover {
+        background-color: white;
+        color:black;
+    }
+    
+    /* Create an active/current "tab button" class */
+    .tab button.active {
+        background-color: white;
+        color: black;
+        bottom: 100px;
+    }
+    
+    /* Style the tab content */
+    .tabcontent {
+        display: none;
+        padding: 0px 12px;
+        border: 0px solid #ccc;
+        width: 70%;
+        height: 500px;
+        position: relative;
+        font-family: prompt;
+        top: -240px;    
+        right: -380px;   
+        z-index: 0; 
+        float: left;
+    }
+
+    .pro {
+        margin-top: 50px;
+        margin-left: 50px;
+        padding: 10px;
+        justify-content: flex-start;
+    }
+    .proibido {
+        width: 15%;
+    }
+
+
+
+    
+    .distort {
+        transition: all 400ms;
+    }
+    
+    .new:hover .distort {
+        transform: translateX(0) !important;
+    }
+    
+    .new, .distort {
+        color: white;
+        position: relative;
+        top: calc(50vh - 120px);
+        font-family: arial black, sans-serif;
+        font-size: 10px;
+        text-align: center;
+    }

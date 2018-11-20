@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>s u j e r a</title>
+    <link rel="stylesheet" type="text/css" href="sujera.css">
+</head>
+<body>
+    <div class="logo">
+            <img src="arquivos/sujerabranca.png" alt="some_text"">
+    </div> 
+
+    <div id="ar_console">
+        <div id="wrap_console">
+        <div id="console_container">
+            <span class="amarelo">root@sujera</span>
+            :~$ cd home
+            <div>Memórias Sujas que só existem aqui</div>
+            <br>
+            <div>Sou um programador que deixou de existir <br> <br> <br> Ou melhor... Eu existo... aqui.</div><br>
+            <div>Digite  
+                "<a href="menu.html" class="ar_command" data-command="m" id="meniu">m</a>"
+                 para ir ao menu, ou
+                 "<a href="ajuda.html" class="ar_command" data-command="h" id="ajuda">a</a>"
+                  , caso precise de ajuda.
+                  <br><br>
+                </div>
+
+        </div>
+
+        <!--Input-->
+        <div id="input_console" style="opacity: 1;">
+            <div class="rootlog">
+            <span class="amarelo">root@sujera</span>
+            :~$
+        </div>
+            <div id="input_wrap">
+                <div id="formulario">
+                <input id="ar_input" type="text" name="ar_input" placeholder="" autocomplete="off">
+                <input value="enviar" type="submit">
+                <button id="but" onclick="conversa()">.</button>
+                </div>
+            </div>
+        </div>
+
+        </div>
+    </div>
+   <!--
+    <script>
+            var form = document.getElementById('formulario');
+            var campo = document.getElementById('ar_input');
+            
+            form.addEventListener('submit', function(e) {
+                // alerta o valor do campo
+                alert(campo.value);
+            
+                // impede o envio do form
+                
+                e.preventDefault();
+            });</script>
+            -->
+    <script type="text/javascript">
+ 
+
+        var input = document.getElementById("ar_input");
+        console.log("ddd");
+        console.log(document.getElementById("ar_input"));
+        input.addEventListener("keyup", function(event) {
+            
+            
+            if (event.keyCode == 13) {
+                document.getElementById("but").click();
+            }
+        });
+
+               
+        function conversa() {
+            console.log(input.value);
+            if(input.value == "a"){
+                console.log(input.value);
+                window.onload = function(){
+                    document.getElementById("ajuda").click();
+                }
+            }
+            return null;
+
+        }
+         </script>
+
+
+</script>
+
+</body>
+</html>

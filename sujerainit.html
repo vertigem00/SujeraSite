@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>s u j e r a</title>
+    <link rel="stylesheet" type="text/css" href="sujera.css">
+</head>
+<body>
+    <div class="logo">
+            <img src="arquivos/sujerabranca.png" alt="some_text">
+    </div> 
+
+    <div id="ar_console">
+        <div id="wrap_console">
+        <div id="console_container">
+            <!--Inicidio do Console-->
+            <span class="amarelo">root@sujera ~:</span>
+             cd home
+            <div>Memórias Sujas que só existem aqui</div>
+            <br>
+            <div>Sou um programador que deixou de existir <br>
+            <br> <br> Ou melhor... Eu existo... aqui.</div><br>
+            <div>Digite  
+                "<a href="#" onclick="menu()" class="ar_command" data-command="m" id="men">m</a>"
+                para ir ao menu, ou
+                "<a href="#" onclick="ajuda()" class="ar_command" data-command="h" id="aju">a</a>"
+                , caso precise de ajuda.
+                <br><br>
+            </div>       
+
+        </div>
+
+        <!--Input-->
+        <div id="input_console" style="opacity: 1">
+            <div class="rootlog">
+            <span class="amarelo">root@sujera ~:</span>
+            
+        </div>
+            <div id="input_wrap">
+                <div id="formulario">
+                <input id="ar_input" type="text" name="ar_input" placeholder="" autocomplete="off">
+                <input value="enviar" type="submit">
+                <button id="but" onclick="comando()">.</button>
+                </div>
+            </div>
+        </div>
+
+        </div>
+    </div>
+
+
+    <script type="text/javascript" src="script.js"></script>
+
+
+</body>
+</html>

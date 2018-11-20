@@ -1,0 +1,42 @@
+body{
+    background-color: black;
+}
+p{
+    color:white;
+}
+#console{
+    position: fixed;
+    z-index: 90;
+    bottom: 8px;
+    left: 8px;
+    width: 100%;
+    max-width: 512px;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column-reverse;
+    max-height: 100%;
+    overflow: hidden;
+  }
+
+  #console_box{
+      size: 100px;
+      border-color: cyan;
+  }
+
+  #ffinput{
+    -webkit-appearance: none;
+    outline: 0;
+    height: 18px;
+    font-size: 13px;
+    line-height: 18px;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+    font: inherit;
+    color: #FFF;
+    font-family: courier, monospace;
+    width: 100%;
+    caret-color: rgb(0, 255, 0);
+  }

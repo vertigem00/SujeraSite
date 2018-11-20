@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>s u j e r a</title>
+    <link rel="stylesheet" type="text/css" href="sujera.css">
+</head>
+<body>
+    <div class="logoa">
+            <img src="arquivos/sujerabranca.png" alt="some_text"">
+    </div> 
+
+    <div id="ar_console">
+        <div id="wrap_console">
+        <div id="console_container">
+            <span class="amarelo">root@sujera</span>
+            :~$ cd menu
+          <br><br> Menu em construção <br><br>
+          <a href="sujerainit.html">Inicío</a> <br><br>
+        </div>
+
+        <!--Input-->
+        <div id="input_console" style="opacity: 1;">
+            <div class="rootlog">
+            <span class="amarelo">root@sujera</span>
+            :~$
+        </div>
+            <div id="input_wrap">
+                <input id="ar_input" type="text" name="ar_input" placeholder="" autocomplete="off">
+                <button id="but" onclick="javascript:alert('ola')">.</button>
+            </div>
+        </div>
+
+        </div>
+    </div>
+   
+    <script>
+    var input = document.getElementById("ar_input");
+    console.log("ddd");
+    console.log(input.attributes.item);
+    input.addEventListener("keyup", function(event) {
+        event.preventDefault();
+        
+        if (event.keyCode == 13) {
+            document.getElementById("but").click();
+        }
+    });
+     </script>
+</body>
+</html>
