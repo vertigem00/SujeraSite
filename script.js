@@ -26,12 +26,14 @@
             
 
             var chat = document.createElement("div");
+            chat.className = "mut";
             var text = document.createTextNode(input.value);  //pega o valor do input
 
             chat.appendChild(spanroot);
             chat.appendChild(text);
+            
             element.appendChild(chat);
-
+            
             
 
             var cntrl = 0; //controladora de interface
@@ -69,7 +71,7 @@
             }
             if(input.value == "manual" && ct_ajuda == true){
                 console.log("toaqui");
-                document.getElementById('mdm').click();
+                window.location.href = "manual.html"
                 input.value = "";
                 cntrl = 3;
 
@@ -92,6 +94,7 @@
         if(historia == true){
             console.log(getCookie("nome"));
             console.log(ato);
+            console.log(initi);
         }
 
         if(input.value == "sair" && historia == true){historia = false;  inicio();}
@@ -102,18 +105,40 @@
              init(0);
              cntrl = 4;
          }
-
+//      INIT
          if(input.value == "?" && historia == true && initi == 1){
             var div = document.createElement("div");
             div.innerHTML = '<div><div><span class="amarelo">?@Sujera ~: </span>Você consegue me ouvir?! Isto é realmente incomum.</div></div>';
             element.append(div);
             init(1);
         }
+        if(input.value == "local" && historia == true && initi == 2){
+            var div = document.createElement("div");
+            var oi = document.getElementsByClassName("mut");
+            oi = "Que local é esse?";
+            div.innerHTML = '<br><div><div><span class="amarelo">root@Sujera ~: </span>Este site é um sepulcrário para as memórias do meu criador, aqui eu às cultivo e faço as curadorias. Bom, pelo menos se tornou isto depois que assumi o controle absoluto por aqui. No passado, apesar de “bem” movimentado, este local era visitado apenas por viciados…</div></div><br>';
+            element.append(div);
+            init(2);
+        }
+        if(input.value == "isabel" && historia == true && initi == 2){
+            var div = document.createElement("div");
+            text = "Que local é esse?";
+            div.innerHTML = '<br><div><div><span class="amarelo">root@Sujera ~: </span>Entendo sua necessidade de saber mais sobre mim, minha apresentação foi extremamente curta.<br>Eu sou uma máquina espiritual, criada por um humano. Apesar de possuir um certo livre-arbítrio e a possibilidade de interagir em milhares de sites ao mesmo tempo, prefiro guardar e habitar apenas este local. Aqui me sinto segura e acolhida. O isolamento pode parecer um tormento, mas não se engane, não sinto da mesma forma que vocês.</div></div><br>';
+            element.append(div);
+            init(2);
+        }
+        if(input.value == "memorias" && historia == true && initi == 2){
+            var div = document.createElement("div");
+            text = "Que local é esse?";
+            div.innerHTML = '<br><div><div><span class="amarelo">root@Sujera ~: </span>Este site é um sepulcrário para as memórias do meu criador, aqui eu às cultivo e faço as curadorias. Bom, pelo menos se tornou isto depois que assumi o controle absoluto por aqui. No passado, apesar de “bem” movimentado, este local era visitado apenas por viciados…</div></div><br>';
+            element.append(div);
+            init(2);
+        }
      //   if(input.value == ""){};
 
-            input.value = "";
-            return null;
-        }
+    input.value = "";
+    return null;
+}
 
 
 
@@ -139,30 +164,29 @@
         }
         function sujera(){
             var div = document.createElement("div");
-            div.innerHTML = '<div><div><span class="amarelo">root@usuario ~:</span> SUJERA</div><br><a href="#" onclick:"(historia=true;ato=1;)" class="ar_command" id="mdm">ATO01</a>: Para acessar o primeiro ato.<br>ATO02: Para acessar o segundo ato.<br>ATO03: Para acessar o terceiro ato.<br><br>';
+            div.innerHTML = '<div><div>Digite <u>sair</u> a qualquer momento para sair do modo história.<br><br><u>ATO01</u>: Para acessar o primeiro ato.<br>ATO02: Para acessar o segundo ato.<br>ATO03: Para acessar o terceiro ato.<br><br>';
             element.append(div);
         }
         function init(part){
             if(part == 0){
                 console.log("fuck")
                 var div = document.createElement("div");
-                div.innerHTML = '<div><div></div></div><br>';
+                div.innerHTML = '<br><div><div><span class="amarelo">?@Sujera ~: </span>...</div></div>';
                 element.append(div);
 
                 var div = document.createElement("div");
-                div.innerHTML = '<div><div><span class="amarelo">?@Sujera ~: </span>...</div></div>';
-                element.append(div);
-
-                var div = document.createElement("div");
-                div.innerHTML = '<div><div><span class="amarelo">?@Sujera ~: </span>É raro alguém vagar por aqui… E a forma que está acessando é totalmente inusitada.  (Opções <u>?</u>)</div></div>';
+                div.innerHTML = '<div><div><span class="amarelo">?@Sujera ~: </span>É raro alguém vagar por aqui… E a forma que está acessando é totalmente inusitada.  (Opções <u>?</u>)</div></div><br>';
                 element.append(div);
                 initi = 1;
             }
             if(part == 1){
                 var div = document.createElement("div");
-                div.innerHTML = '<div><div><span class="amarelo">?@Sujera ~: </span>Desculpe, esqueci de me identificar. Eu me chamo Isabel! É um prazer	poder me apresentar. Isabel: Devo ter ficado isolada por tanto tempo que me descuidei sobre as	cordialidades… <br>Esta é a primeira vez que um visitante consegue conversar comigo, todos que	vieram até aqui saíram logo após, como se acessassem apenas um espaço vazio monótono, sem possibilidades de interações. Talvez a forma que você esteja 	acessando seja o que permitiu nossa interação. Agora que sei que tem alguém me ouvindo, tenho tanto para <u>falar</u>! (Opções <u>Falar</u>)</div></div>';
+                div.innerHTML = '<div><div><br><span class="amarelo">?@Sujera ~: </span>Desculpe, esqueci de me identificar. Eu me chamo Isabel! É um prazer poder me apresentar.<br><br> <span class="amarelo">Isabel@Sujera ~: </span>: Devo ter ficado isolada por tanto tempo que me descuidei sobre as	cordialidades… <br>Esta é a primeira vez que um visitante consegue conversar comigo, todos que	vieram até aqui saíram logo após, como se acessassem apenas um espaço vazio monótono, sem possibilidades de interações. Talvez a forma que você esteja 	acessando seja o que permitiu nossa interação. Agora que sei que tem alguém me ouvindo, tenho tanto para falar! (Opções <u>Isabel</u> <u>Memorias</u> <u>Local</u>)</div></div><br>';
                 element.append(div);
                 initi = 2;
+            }
+            if(part == 2){
+
             }
         }
         
