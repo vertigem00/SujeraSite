@@ -10,28 +10,60 @@
 <body>
     oi
 
-    <script>var app = new PIXI.Application(800, 600, {backgroundColor : 0x1099bb});
-        document.body.appendChild(app.view);
+    <script>console.clear();
+
+        var stage = new PIXI.Container();
+        var renderer = PIXI.autoDetectRenderer(window.innerWidth, window.innerHeight);
+        renderer.backgroundColor = 0xFFFFFF;
+        
+        document.body.appendChild(renderer.view);
+        
+        /*////////////////////////////////////////*/
         
         var container = new PIXI.Container();
+        container.position.x = (renderer.width/2);
+        container.position.y = renderer.height/2;
+        stage.addChild(container);
         
-        app.stage.addChild(container);
         
-        var texture = PIXI.Texture.fromImage('arquivos/sujera.gif');
+        /*////////////////////////////////////////*/
         
-        // Create a 5x5 grid of bunnies
-        for (var i = 0; i < 25; i++) {
-            var bunny = new PIXI.Sprite(texture);
-            bunny.anchor.set(0.5);
-            bunny.x = (i % 5) * 40;
-            bunny.y = Math.floor(i / 5) * 40;
-            container.addChild(bunny);
-        }
+        var originalVertices = [],
+            mesh;
         
-        // Center on the screen
-        container.x = (app.screen.width - container.width) / 2;
-        container.y = (app.screen.height - container.height) / 2;
-        </script>
+        var texture = new PIXI.Texture.fromImage('arquivos/sujera.gif');
+        texture.on('update',function(){
+          
+          mesh = new PIXI.mesh.Plane( this, 20, 20 );
+          mesh.width = this.width * 0.30; //renderer.width * 0.35;
+          mesh.height = this.height * 0.30;//renderer.width * 0.5;
+          container.addChild(mesh);//, 0);
+          mesh.pivot.x = 1000;//mesh.width * 0.4;
+          mesh.pivot.y = 1000;//mesh.height * 0.3;
+          
+          originalVertices = mesh.vertices.slice(0);
+          
+          animate();
+        });
+        
+        /*////////////////////////////////////////*/
+        
+        var count = 0;
+        
+        function animate() {
+          requestAnimationFrame(animate);
+        
+          count += 0.15;
+          
+          if ( mesh && mesh.vertices ) { 
+            
+            for (let i = 0; i < mesh.vertices.length; i++) {
+              mesh.vertices[i] = originalVertices[i] + (3 * Math.cos(count + i * 0.15));
+            }
+          }
+        
+          renderer.render(stage);
+        }</script>
 </body>
 
 </html>
