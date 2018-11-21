@@ -58,6 +58,7 @@
 
             }
             if(input.value == "limpar"){
+                cntrl = 10;
                 window.location.href = "sujerainit.html";
             }
 
