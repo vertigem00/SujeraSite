@@ -30,7 +30,7 @@ var sided = false;
             var player = target.animate([
                 {transform: 'translate(0)'},
                 {transform: 'translate(-480px, 0px'}
-            ], 500);
+            ], 400);
             player.addEventListener('finish', function(){
                 target.style.transform = 'translate(-480px, 0px)';
             });
