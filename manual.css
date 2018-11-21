@@ -100,7 +100,7 @@ body {
     }
 
     .pulse {
-        animation: pulse 0.7s infinite;
+        animation: pulse 1s infinite;
 
         display: table;
         animation-direction: alternate;
