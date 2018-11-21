@@ -2,6 +2,8 @@
         var ct_ajuda = false;
         var suj = false;
         var historia = false;
+        var ato = 10;
+        var initi = 0;
 
 
         var input = document.getElementById("ar_input");
@@ -31,8 +33,9 @@
             element.appendChild(chat);
 
             
-            var ato = 0;
+
             var cntrl = 0; //controladora de interface
+            setCookie("nome", "?");
 
         if(historia == false){
             
@@ -40,16 +43,9 @@
                 sujera();
                 input.value = "";
                 ct_ajuda= false;
-                suj = true;
-                cntrl = 4;
-                console.log(cntrl);
-            }
-            if(input.value == "ato01" && suj == true){
                 historia = true;
-                ato = 1;
-                
-                console.log(cntrl);
                 cntrl = 4;
+                console.log(cntrl);
             }
             if(input.value == "i" || input.value == "inicio"){
                 inicio();
@@ -91,13 +87,34 @@
             }
         }
 
+///      ATO01
+
         if(historia == true){
-            console.log("jaisijas");
+            console.log(getCookie("nome"));
+            console.log(ato);
         }
+
+        if(input.value == "sair" && historia == true){historia = false;  inicio();}
+
+
+        if(input.value == "ato01" && historia == true){
+            /// historia = true;
+             init(0);
+             cntrl = 4;
+         }
+
+         if(input.value == "?" && historia == true && initi == 1){
+            var div = document.createElement("div");
+            div.innerHTML = '<div><div><span class="amarelo">?@Sujera ~: </span>Você consegue me ouvir?! Isto é realmente incomum.</div></div>';
+            element.append(div);
+            init(1);
+        }
+     //   if(input.value == ""){};
 
             input.value = "";
             return null;
         }
+
 
 
 
@@ -120,12 +137,65 @@
             div.innerHTML = '<div><div><span class="amarelo">root@usuario ~:</span> SOBRE</div><br><u>MANUAL:</u> Para acessar o manual da marca.<br><u>Desenvolvedores:</u> Informações sobre os desenvolvedores.<br><u>Inicío:</u> Retorna para a tela inicial.<br><br>';
             element.append(div);
         }
-
-
         function sujera(){
             var div = document.createElement("div");
             div.innerHTML = '<div><div><span class="amarelo">root@usuario ~:</span> SUJERA</div><br><a href="#" onclick:"(historia=true;ato=1;)" class="ar_command" id="mdm">ATO01</a>: Para acessar o primeiro ato.<br>ATO02: Para acessar o segundo ato.<br>ATO03: Para acessar o terceiro ato.<br><br>';
             element.append(div);
         }
+        function init(part){
+            if(part == 0){
+                console.log("fuck")
+                var div = document.createElement("div");
+                div.innerHTML = '<div><div></div></div><br>';
+                element.append(div);
+
+                var div = document.createElement("div");
+                div.innerHTML = '<div><div><span class="amarelo">?@Sujera ~: </span>...</div></div>';
+                element.append(div);
+
+                var div = document.createElement("div");
+                div.innerHTML = '<div><div><span class="amarelo">?@Sujera ~: </span>É raro alguém vagar por aqui… E a forma que está acessando é totalmente inusitada.  (Opções <u>?</u>)</div></div>';
+                element.append(div);
+                initi = 1;
+            }
+            if(part == 1){
+                var div = document.createElement("div");
+                div.innerHTML = '<div><div><span class="amarelo">?@Sujera ~: </span>Desculpe, esqueci de me identificar. Eu me chamo Isabel! É um prazer	poder me apresentar. Isabel: Devo ter ficado isolada por tanto tempo que me descuidei sobre as	cordialidades… <br>Esta é a primeira vez que um visitante consegue conversar comigo, todos que	vieram até aqui saíram logo após, como se acessassem apenas um espaço vazio monótono, sem possibilidades de interações. Talvez a forma que você esteja 	acessando seja o que permitiu nossa interação. Agora que sei que tem alguém me ouvindo, tenho tanto para <u>falar</u>! (Opções <u>Falar</u>)</div></div>';
+                element.append(div);
+                initi = 2;
+            }
+        }
         
       
+        function setCookie(name, value, duration) {
+            var cookie = name + "=" + escape(value) +
+            ((duration) ? "; duration=" + duration.toGMTString() : "");
+     
+            document.cookie = cookie;
+    }   
+
+    function getCookie(name) {
+        var cookies = document.cookie;
+        var prefix = name + "=";
+        var begin = cookies.indexOf("; " + prefix);
+     
+        if (begin == -1) {
+     
+            begin = cookies.indexOf(prefix);
+             
+            if (begin != 0) {
+                return null;
+            }
+     
+        } else {
+            begin += 2;
+        }
+     
+        var end = cookies.indexOf(";", begin);
+         
+        if (end == -1) {
+            end = cookies.length;                        
+        }
+     
+        return unescape(cookies.substring(begin + prefix.length, end));
+    }
