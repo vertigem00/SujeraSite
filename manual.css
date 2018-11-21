@@ -105,7 +105,7 @@ body {
         display: table;
         animation-direction: alternate;
         -webkit-animation-name: pulse;
-        animation-name: pulse;
+        animation-name: neon1;
       }
       
       @-webkit-keyframes pulse {
@@ -114,8 +114,8 @@ body {
           -webkit-filter: brightness(100%);
         }
         100% {
-          -webkit-transform: scale(1.1);
-          -webkit-filter: brightness(200%);
+          -webkit-transform: scale(1);
+          -webkit-filter: brightness(500%);
         }
       }
       
@@ -125,7 +125,16 @@ body {
           filter: brightness(100%);
         }
         100% {
-          transform: scale(1.1);
-          filter: brightness(200%);
+          transform: scale(1);
+          filter: brightness(5000%);
+        }
+      }
+
+      @keyframes neon1 {
+        from {
+          text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px white, 0 0 70px white, 0 0 80px white, 0 0 100px white, 0 0 150px white;
+        }
+        to {
+          text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px white, 0 0 35px white, 0 0 40px white, 0 0 50px white, 0 0 75px white;
         }
       }
