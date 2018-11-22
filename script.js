@@ -4,7 +4,7 @@
         var historia = false;
         var ato = 10;
         var initi = 0;
-
+        var numb = 0;
 
         var input = document.getElementById("ar_input");
         console.log(document.getElementById("ar_input"));
@@ -118,7 +118,7 @@
             init(1);
             cntrl = 5;
         }
-        if(input.value == "local" && historia == true && initi == 2){
+        if(input.value == "local" || input.value == "Local" && historia == true && initi == 2){
             var div = document.createElement("div");
             var oi = document.getElementsByClassName("mut");
             oi = "Que local é esse?";
@@ -267,12 +267,11 @@
     }
 
     function ato1img(){
+        if (numb == 0){numb += 1} else if (numb >= 1){numb = 0};
         var ato = document.getElementById("ato01");
-        var imgcount = ato.getAttribute('data-img');
-        console.log(imgcount);
         numero = Math.floor(Math.random() * 2);
         var imgs = ["arquivos/1Fotos/Foto1.png","arquivos/1Fotos/Foto2.png"]
-        document.getElementById("ato01").src = imgs[numero];
+        document.getElementById("ato01").src = imgs[numb];
     }
 
     // 'Getting' data-attributes using getAttribute
@@ -281,3 +280,4 @@ var fruitCount = plant.getAttribute('data-fruit'); // fruitCount = '12'
 
 // 'Setting' data-attributes using setAttribute
 plant.setAttribute('data-fruit','7'); // Pesky birds
+
