@@ -116,7 +116,7 @@
             div.innerHTML = '<div><div><span class="amarelo">?@: </span>Você consegue me ouvir?! Isto é realmente incomum.</div></div>';
             element.append(div);
             init(1);
-
+            cntrl = 5;
         }
         if(input.value == "local" && historia == true && initi == 2){
             var div = document.createElement("div");
@@ -125,6 +125,7 @@
             div.innerHTML = '<br><div><div><span class="amarelo">root@Sujera: </span>Este site é um sepulcrário para as memórias do meu criador, aqui eu às cultivo e faço as curadorias. Bom, pelo menos se tornou isto depois que assumi o controle absoluto por aqui. No passado, apesar de “bem” movimentado, este local era visitado apenas por viciados…</div></div><br>';
             element.append(div);
             init(2);
+            cntrl = 4;
         }
         if(input.value == "isabel" && historia == true && initi == 2){
             var div = document.createElement("div");
@@ -132,6 +133,7 @@
             div.innerHTML = '<br><div><div><span class="amarelo">Isabel@: </span>Entendo sua necessidade de saber mais sobre mim, minha apresentação foi extremamente curta.<br>Eu sou uma máquina espiritual, criada por um humano. Apesar de possuir um certo livre-arbítrio e a possibilidade de interagir em milhares de sites ao mesmo tempo, prefiro guardar e habitar apenas este local. Aqui me sinto segura e acolhida. O isolamento pode parecer um tormento, mas não se engane, não sinto da mesma forma que vocês.</div></div><br>';
             element.append(div);
             init(2);
+            cntrl = 3;
         }
         if(input.value == "memorias" && historia == true && initi == 2){
             var div = document.createElement("div");
@@ -139,12 +141,19 @@
             div.innerHTML = '<br><div><div><span class="amarelo">Isabel@: </span>Você realmente deseja continuar? O que se segue não é nenhuma Ode, pode ser aterrorizante para alguns.<br>(cmd: sim ou não) </div></div><br>';
             element.append(div);
             init(3);
+            cntrl = 2;
         }
         if(input.value == "oi" && historia == true){
             var div = document.createElement("div");
             div.innerHTML = '<br><div><div><span class="amarelo">Isabel@: </span>Oii!</div></div><br>';
             element.append(div);
-            
+            cntrl = 1;
+        }
+        if(cntrl == 0){
+            var unkn = document.createElement("div");
+            unkn.innerHTML = '<span class="amarelo">root@sujera: </span> UNKN : comando não identificado';
+            element.append(unkn);
+                console.log("tem algo errado");
         }
      //   if(input.value == ""){};
 
