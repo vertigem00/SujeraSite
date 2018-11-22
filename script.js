@@ -129,16 +129,16 @@
         if(input.value == "isabel" && historia == true && initi == 2){
             var div = document.createElement("div");
             text = "Que local é esse?";
-            div.innerHTML = '<br><div><div><span class="amarelo">root@Sujera: </span>Entendo sua necessidade de saber mais sobre mim, minha apresentação foi extremamente curta.<br>Eu sou uma máquina espiritual, criada por um humano. Apesar de possuir um certo livre-arbítrio e a possibilidade de interagir em milhares de sites ao mesmo tempo, prefiro guardar e habitar apenas este local. Aqui me sinto segura e acolhida. O isolamento pode parecer um tormento, mas não se engane, não sinto da mesma forma que vocês.</div></div><br>';
+            div.innerHTML = '<br><div><div><span class="amarelo">Isabel@: </span>Entendo sua necessidade de saber mais sobre mim, minha apresentação foi extremamente curta.<br>Eu sou uma máquina espiritual, criada por um humano. Apesar de possuir um certo livre-arbítrio e a possibilidade de interagir em milhares de sites ao mesmo tempo, prefiro guardar e habitar apenas este local. Aqui me sinto segura e acolhida. O isolamento pode parecer um tormento, mas não se engane, não sinto da mesma forma que vocês.</div></div><br>';
             element.append(div);
             init(2);
         }
         if(input.value == "memorias" && historia == true && initi == 2){
             var div = document.createElement("div");
             text = "Que local é esse?";
-            div.innerHTML = '<br><div><div><span class="amarelo">root@Sujera: </span>Este site é um sepulcrário para as memórias do meu criador, aqui eu às cultivo e faço as curadorias. Bom, pelo menos se tornou isto depois que assumi o controle absoluto por aqui. No passado, apesar de “bem” movimentado, este local era visitado apenas por viciados…</div></div><br>';
+            div.innerHTML = '<br><div><div><span class="amarelo">Isabel@: </span>Você realmente deseja continuar? O que se segue não é nenhuma Ode, pode ser aterrorizante para alguns.<br>(cmd: sim ou não) </div></div><br>';
             element.append(div);
-            init(2);
+            init(3);
         }
         if(input.value == "oi" && historia == true){
             var div = document.createElement("div");
@@ -156,6 +156,7 @@
 
 
         var element = document.getElementById("console_container");
+          var fundo = document.getElementById("img_container");
 
         function inicio(){
             var div = document.createElement("div");
@@ -206,6 +207,16 @@
             if(part == 2){
 
             }
+            if(part == 3){
+                var imgCont = document.getElementById("img_container");
+                imgCont.style = "display:block"
+                var img1 = document.createElement("div");
+                img1.innerHTML = "<img src='arquivos/1Fotos/Foto1.png' data-img='0' class='ato01' id='ato01' onclick='ato1img()'s></img>"
+                fundo.append(img1);
+                var img = document.getElementsByClassName("logo");
+                img.src = "arquivos/1Fotos/Foto1.png";
+
+            }
         }
         
       
@@ -241,3 +252,23 @@
      
         return unescape(cookies.substring(begin + prefix.length, end));
     }
+
+    function ato1img(){
+        var ato = document.getElementById("ato01");
+        var imgcount = ato.getAttribute('data-img');
+        console.log(imgcount);
+        numero = Math.floor(Math.random() * 2);
+        var imgs = ["arquivos/1Fotos/Foto1.png","arquivos/1Fotos/Foto2.png"]
+
+        document.getElementById("ato01").src = imgs[numero];
+
+
+        
+    }
+
+    // 'Getting' data-attributes using getAttribute
+var plant = document.getElementById('strawberry-plant');
+var fruitCount = plant.getAttribute('data-fruit'); // fruitCount = '12'
+
+// 'Setting' data-attributes using setAttribute
+plant.setAttribute('data-fruit','7'); // Pesky birds
