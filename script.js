@@ -138,6 +138,12 @@
             element.append(div);
             init(2);
         }
+        if(input.value == "oi" && historia == true){
+            var div = document.createElement("div");
+            div.innerHTML = '<br><div><div><span class="amarelo">root@Sujera: </span>Oii!</div></div><br>';
+            element.append(div);
+            
+        }
      //   if(input.value == ""){};
 
     input.value = "";
