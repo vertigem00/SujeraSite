@@ -76,6 +76,10 @@
                 cntrl = 3;
 
             }
+            if(input.value == "desenvolvedores" || input.value == "dev" && ct_ajuda == true){
+                cntrl = 5;
+                dev();
+            }
             if(input.value == "limpar"){
                 cntrl = 10;
                 window.location.href = "sujerainit.html";
@@ -83,7 +87,7 @@
 
             if(cntrl == 0){
                 var unkn = document.createElement("div");
-                unkn.innerHTML = '<span class="amarelo">root@sujera ~: </span> UNKN : comando não identificado';
+                unkn.innerHTML = '<span class="amarelo">root@sujera: </span> UNKN : comando não identificado';
                 element.append(unkn);
                     console.log("tem algo errado");
             }
@@ -106,9 +110,9 @@
              cntrl = 4;
          }
 //      INIT
-         if(input.value == "?" && historia == true && initi == 1){
+         if(input.value == "como?" || input.value == "como" && historia == true && initi == 1){
             var div = document.createElement("div");
-            div.innerHTML = '<div><div><span class="amarelo">?@Sujera ~: </span>Você consegue me ouvir?! Isto é realmente incomum.</div></div>';
+            div.innerHTML = '<div><div><span class="amarelo">?@: </span>Você consegue me ouvir?! Isto é realmente incomum.</div></div>';
             element.append(div);
             init(1);
         }
@@ -116,21 +120,21 @@
             var div = document.createElement("div");
             var oi = document.getElementsByClassName("mut");
             oi = "Que local é esse?";
-            div.innerHTML = '<br><div><div><span class="amarelo">root@Sujera ~: </span>Este site é um sepulcrário para as memórias do meu criador, aqui eu às cultivo e faço as curadorias. Bom, pelo menos se tornou isto depois que assumi o controle absoluto por aqui. No passado, apesar de “bem” movimentado, este local era visitado apenas por viciados…</div></div><br>';
+            div.innerHTML = '<br><div><div><span class="amarelo">root@Sujera: </span>Este site é um sepulcrário para as memórias do meu criador, aqui eu às cultivo e faço as curadorias. Bom, pelo menos se tornou isto depois que assumi o controle absoluto por aqui. No passado, apesar de “bem” movimentado, este local era visitado apenas por viciados…</div></div><br>';
             element.append(div);
             init(2);
         }
         if(input.value == "isabel" && historia == true && initi == 2){
             var div = document.createElement("div");
             text = "Que local é esse?";
-            div.innerHTML = '<br><div><div><span class="amarelo">root@Sujera ~: </span>Entendo sua necessidade de saber mais sobre mim, minha apresentação foi extremamente curta.<br>Eu sou uma máquina espiritual, criada por um humano. Apesar de possuir um certo livre-arbítrio e a possibilidade de interagir em milhares de sites ao mesmo tempo, prefiro guardar e habitar apenas este local. Aqui me sinto segura e acolhida. O isolamento pode parecer um tormento, mas não se engane, não sinto da mesma forma que vocês.</div></div><br>';
+            div.innerHTML = '<br><div><div><span class="amarelo">root@Sujera: </span>Entendo sua necessidade de saber mais sobre mim, minha apresentação foi extremamente curta.<br>Eu sou uma máquina espiritual, criada por um humano. Apesar de possuir um certo livre-arbítrio e a possibilidade de interagir em milhares de sites ao mesmo tempo, prefiro guardar e habitar apenas este local. Aqui me sinto segura e acolhida. O isolamento pode parecer um tormento, mas não se engane, não sinto da mesma forma que vocês.</div></div><br>';
             element.append(div);
             init(2);
         }
         if(input.value == "memorias" && historia == true && initi == 2){
             var div = document.createElement("div");
             text = "Que local é esse?";
-            div.innerHTML = '<br><div><div><span class="amarelo">root@Sujera ~: </span>Este site é um sepulcrário para as memórias do meu criador, aqui eu às cultivo e faço as curadorias. Bom, pelo menos se tornou isto depois que assumi o controle absoluto por aqui. No passado, apesar de “bem” movimentado, este local era visitado apenas por viciados…</div></div><br>';
+            div.innerHTML = '<br><div><div><span class="amarelo">root@Sujera: </span>Este site é um sepulcrário para as memórias do meu criador, aqui eu às cultivo e faço as curadorias. Bom, pelo menos se tornou isto depois que assumi o controle absoluto por aqui. No passado, apesar de “bem” movimentado, este local era visitado apenas por viciados…</div></div><br>';
             element.append(div);
             init(2);
         }
@@ -162,26 +166,32 @@
             div.innerHTML = '<div><br><u>manual:</u> Para acessar o manual da marca.<br><u>desenvolvedores:</u> Informações sobre os desenvolvedores.<br><u>inicío:</u> Retorna para a tela inicial.<br><br>';
             element.append(div);
         }
+        function dev(){
+            
+            var div = document.createElement("div");
+            div.innerHTML = '<div><br> SUJERA é um projeto independente desenvolvido na disciplina de Direção de Arte, do curso de Design Digital da Universidade Federal do Ceará.<br><br>Desenvolvido por: <br> <u>Alessandro Freitas</u><br><i>alessandrokame@gmail.com</i><br><u>Pedro Vitor Mendonça</u><br><i>pedro_vml@hotmail.com</i><br><br>';
+            element.append(div);
+        }
         function sujera(){
             var div = document.createElement("div");
-            div.innerHTML = '<div><div>Digite <u>sair</u> a qualquer momento para sair do modo história.<br><br><u>ATO01</u>: Para acessar o primeiro ato.<br>ATO02: Para acessar o segundo ato.<br>ATO03: Para acessar o terceiro ato.<br><br>';
+            div.innerHTML = '<div><div><br>Digite <u>sair</u> a qualquer momento para sair do modo história.<br><br><u>ato01</u>: Para acessar o primeiro ato.<br>ato02: CORROMPIDO <br>ato03: DSTV<br><br>';
             element.append(div);
         }
         function init(part){
             if(part == 0){
                 console.log("fuck")
                 var div = document.createElement("div");
-                div.innerHTML = '<br><div><div><span class="amarelo">?@Sujera: </span>...</div></div>';
+                div.innerHTML = '<br><div><div><span class="amarelo">?@: </span>...</div></div>';
                 element.append(div);
 
                 var div = document.createElement("div");
-                div.innerHTML = '<div><div><span class="amarelo">?@: </span>É raro alguém vagar por aqui… E a forma que está acessando é totalmente inusitada.  (Opções <u>?</u>)</div></div><br>';
+                div.innerHTML = '<div><div><span class="amarelo">?@: </span>É raro alguém vagar por aqui… E a forma que está acessando é totalmente inusitada.  (cmd: <u>como?</u>)</div></div><br>';
                 element.append(div);
                 initi = 1;
             }
             if(part == 1){
                 var div = document.createElement("div");
-                div.innerHTML = '<div><div><br><span class="amarelo">?@: </span>Desculpe, esqueci de me identificar. Eu me chamo Isabel! É um prazer poder me apresentar.<br><br> <span class="amarelo">Isabel@Sujera ~: </span>: Devo ter ficado isolada por tanto tempo que me descuidei sobre as	cordialidades… <br>Esta é a primeira vez que um visitante consegue conversar comigo, todos que	vieram até aqui saíram logo após, como se acessassem apenas um espaço vazio monótono, sem possibilidades de interações. Talvez a forma que você esteja 	acessando seja o que permitiu nossa interação. Agora que sei que tem alguém me ouvindo, tenho tanto para falar! (Opções <u>Isabel</u> <u>Memorias</u> <u>Local</u>)</div></div><br>';
+                div.innerHTML = '<div><div><br><span class="amarelo">?@: </span>Desculpe, esqueci de me identificar. Eu me chamo Isabel! É um prazer poder me apresentar.<br><br> <span class="amarelo">Isabel@: </span>: Devo ter ficado isolada por tanto tempo que me descuidei sobre as	cordialidades… <br>Esta é a primeira vez que um visitante consegue conversar comigo, todos que	vieram até aqui saíram logo após, como se acessassem apenas um espaço vazio monótono, sem possibilidades de interações. Talvez a forma que você esteja 	acessando seja o que permitiu nossa interação. Agora que sei que tem alguém me ouvindo, tenho tanto para <u>falar</u>! <br>(cmd: <u>isabel</u> <u>memorias</u> <u>local</u>)</div></div><br>';
                 element.append(div);
                 initi = 2;
             }
