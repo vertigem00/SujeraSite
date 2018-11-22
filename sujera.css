@@ -1,5 +1,11 @@
+@font-face {
+  font-family: prompt;
+  src: url(font/VCR_OSD_MONO.ttf);
+}
 
-
+i {
+  font-size: 70%;
+}
 u {
   color: aqua;
 }
@@ -32,7 +38,7 @@ body{
   padding: 0;
   background-color: #000;
   color: #FFF;
-  font-family: courier, monospace;
+  font-family: 'AkkuratMonoMono', courier, monospace;
   font-size: 14px;
   line-height: 24px;
   font-size: 13px;
@@ -68,6 +74,7 @@ body{
   flex-direction: column-reverse;
   max-height: 100%;
   overflow: hidden;
+  font-size: 15px;
 }
 body.big_font #ar_console{
   max-width: 620px;
@@ -89,7 +96,7 @@ body.huge_font #ar_console{
   color: skyblue;
 }
 .amarelo{
-  color: goldenrod;
+  color: #f0f;
 };
 #wrap_console{
   height: 100%;
@@ -118,7 +125,7 @@ body.huge_font #input_console{
   outline: 0;
   height: 18px;
   font-size: 13px;
-  line-height: 18px;
+  line-height: 30px;
   border: 0;
   padding: 0;
   margin: 0;

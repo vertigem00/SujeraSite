@@ -41,7 +41,7 @@
 
         if(historia == false){
             
-            if(input.value == "sujera"){
+            if(input.value == "sujera" || input.value == "SUJERA"){
                 sujera();
                 input.value = "";
                 ct_ajuda= false;
@@ -153,7 +153,7 @@
         function ajuda(){
             
             var div = document.createElement("div");
-            div.innerHTML = '<div><div><span class="amarelo">root@usuario ~:</span> A / AJUDA</div><br>A navegação no site é feita a partir de hiperligações. Você pode interagir clicando nelas ou digitando-as no console: <br><br><u>A</u> ou <u>AJUDA</u>: Caso você queria retornar a esta página.<br><u>SUJERA</u>: Para acessar a história.<br><u>SOBRE</u>: Para acessar os aspectos técnicos do programa.<br><u>Limpar</u>: Limpa o console.<br><br>';
+            div.innerHTML = '<div><br>A navegação no site é feita a partir de hiperligações. Você pode interagir clicando nelas ou digitando-as no console. <br><br><i>Comandos</i>:<br><u>a</u> ou <u>ajuda</u>: Caso você queria retornar a esta página.<br><u>SUJERA</u>: Para acessar a história.<br><u>sobre</u>: Para acessar os aspectos técnicos do programa.<br><u>limpar</u>: Limpa o console.<br><br>';
             element.append(div);
         }
         function sobre(){
