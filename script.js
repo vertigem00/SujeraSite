@@ -35,7 +35,7 @@
             element.appendChild(chat);
             
             
-
+            var exist = 0;
             var cntrl = 0; //controladora de interface
             setCookie("nome", "?");
 
@@ -110,11 +110,13 @@
              cntrl = 4;
          }
 //      INIT
+
          if(input.value == "como?" || input.value == "como" && historia == true && initi == 1){
             var div = document.createElement("div");
             div.innerHTML = '<div><div><span class="amarelo">?@: </span>Você consegue me ouvir?! Isto é realmente incomum.</div></div>';
             element.append(div);
             init(1);
+
         }
         if(input.value == "local" && historia == true && initi == 2){
             var div = document.createElement("div");
@@ -140,7 +142,7 @@
         }
         if(input.value == "oi" && historia == true){
             var div = document.createElement("div");
-            div.innerHTML = '<br><div><div><span class="amarelo">root@Sujera: </span>Oii!</div></div><br>';
+            div.innerHTML = '<br><div><div><span class="amarelo">Isabel@: </span>Oii!</div></div><br>';
             element.append(div);
             
         }
