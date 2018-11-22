@@ -21,7 +21,7 @@
             var spanroot = document.createElement("span"); //span sujera
             spanroot.className = "amarelo"; //class do span
 
-            var text = document.createTextNode("root@Sujera ~: "); //primeira mensagem do console
+            var text = document.createTextNode("root@Sujera: "); //primeira mensagem do console
             spanroot.appendChild(text);
             
 
@@ -147,19 +147,19 @@
 
         function inicio(){
             var div = document.createElement("div");
-            div.innerHTML = '<span class="amarelo">root@sujera ~: </span>cd home<div>Memórias Sujas que só existem aqui</div><br><div>Sou um programador que deixou de existir <br><br> <br> Ou melhor... Eu existo... aqui.</div><br><div>Digite <u>SUJERA</u> para acessar os atos ou "<u>a</u>", caso precise de ajuda.<br>'
+            div.innerHTML = '<span class="amarelo">root@sujera: </span>cd home<div>Memórias Sujas que só existem aqui</div><br><div>Sou um programador que deixou de existir <br><br> <br> Ou melhor... Eu existo... aqui.</div><br><div>Digite <u>SUJERA</u> para acessar os atos ou "<u>a</u>", caso precise de ajuda.<br>'
             element.append(div);
         }
         function ajuda(){
             
             var div = document.createElement("div");
-            div.innerHTML = '<div><br>A navegação no site é feita a partir de hiperligações. Você pode interagir clicando nelas ou digitando-as no console. <br><br><i>Comandos</i>:<br><u>a</u> ou <u>ajuda</u>: Caso você queria retornar a esta página.<br><u>SUJERA</u>: Para acessar a história.<br><u>sobre</u>: Para acessar os aspectos técnicos do programa.<br><u>limpar</u>: Limpa o console.<br><br>';
+            div.innerHTML = '<div><br>A navegação no site é feita a partir de hiperligações. Você pode interagir clicando nelas ou digitando-as no console. <br><br><i>Comandos</i>:<br><u>a</u> ou <u>ajuda</u>: Caso você queria retornar a esta página.<br><u>SUJERA</u>: Para acessar a história.<br><u>sobre</u>: Para acessar os aspectos técnicos doa marca.<br><u>limpar</u>: Limpa o console.<br><br>';
             element.append(div);
         }
         function sobre(){
             
             var div = document.createElement("div");
-            div.innerHTML = '<div><div><span class="amarelo">root@usuario ~:</span> SOBRE</div><br><u>MANUAL:</u> Para acessar o manual da marca.<br><u>Desenvolvedores:</u> Informações sobre os desenvolvedores.<br><u>Inicío:</u> Retorna para a tela inicial.<br><br>';
+            div.innerHTML = '<div><br><u>manual:</u> Para acessar o manual da marca.<br><u>desenvolvedores:</u> Informações sobre os desenvolvedores.<br><u>inicío:</u> Retorna para a tela inicial.<br><br>';
             element.append(div);
         }
         function sujera(){
@@ -171,17 +171,17 @@
             if(part == 0){
                 console.log("fuck")
                 var div = document.createElement("div");
-                div.innerHTML = '<br><div><div><span class="amarelo">?@Sujera ~: </span>...</div></div>';
+                div.innerHTML = '<br><div><div><span class="amarelo">?@Sujera: </span>...</div></div>';
                 element.append(div);
 
                 var div = document.createElement("div");
-                div.innerHTML = '<div><div><span class="amarelo">?@Sujera ~: </span>É raro alguém vagar por aqui… E a forma que está acessando é totalmente inusitada.  (Opções <u>?</u>)</div></div><br>';
+                div.innerHTML = '<div><div><span class="amarelo">?@: </span>É raro alguém vagar por aqui… E a forma que está acessando é totalmente inusitada.  (Opções <u>?</u>)</div></div><br>';
                 element.append(div);
                 initi = 1;
             }
             if(part == 1){
                 var div = document.createElement("div");
-                div.innerHTML = '<div><div><br><span class="amarelo">?@Sujera ~: </span>Desculpe, esqueci de me identificar. Eu me chamo Isabel! É um prazer poder me apresentar.<br><br> <span class="amarelo">Isabel@Sujera ~: </span>: Devo ter ficado isolada por tanto tempo que me descuidei sobre as	cordialidades… <br>Esta é a primeira vez que um visitante consegue conversar comigo, todos que	vieram até aqui saíram logo após, como se acessassem apenas um espaço vazio monótono, sem possibilidades de interações. Talvez a forma que você esteja 	acessando seja o que permitiu nossa interação. Agora que sei que tem alguém me ouvindo, tenho tanto para falar! (Opções <u>Isabel</u> <u>Memorias</u> <u>Local</u>)</div></div><br>';
+                div.innerHTML = '<div><div><br><span class="amarelo">?@: </span>Desculpe, esqueci de me identificar. Eu me chamo Isabel! É um prazer poder me apresentar.<br><br> <span class="amarelo">Isabel@Sujera ~: </span>: Devo ter ficado isolada por tanto tempo que me descuidei sobre as	cordialidades… <br>Esta é a primeira vez que um visitante consegue conversar comigo, todos que	vieram até aqui saíram logo após, como se acessassem apenas um espaço vazio monótono, sem possibilidades de interações. Talvez a forma que você esteja 	acessando seja o que permitiu nossa interação. Agora que sei que tem alguém me ouvindo, tenho tanto para falar! (Opções <u>Isabel</u> <u>Memorias</u> <u>Local</u>)</div></div><br>';
                 element.append(div);
                 initi = 2;
             }
