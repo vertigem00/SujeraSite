@@ -138,7 +138,7 @@
         if(input.value == "memorias" && historia == true && initi == 2){
             var div = document.createElement("div");
             text = "Que local é esse?";
-            div.innerHTML = '<br><div><div><span class="amarelo">Isabel@: </span>Fique a vontade entre as nossas memórias sujas...<br>';
+            div.innerHTML = '<br><div><div><span class="amarelo">Isabel@: </span>Fique a vontade entre as nossas memórias sujas...<br><i>Clique nas fotos para interagir com as memórias.<br><br>(cmd:<u>Isabel</u> <u>local</u> <u>proxima</u> <u>sair</u>)</i>';
             element.append(div);
             init(3);
             cntrl = 2;
@@ -225,10 +225,8 @@
                 fundo.append(img1);
                 var img = document.getElementsByClassName("logo");
                 img.src = "arquivos/1Fotos/Foto1.png";
-                ////////////////////////////
-                var div = document.createElement("div");
-                div.innerHTML = '</div id="poesia"><br>Quem eu sou, afinal?<br>Um não alguém<br>Que não diz amém<br>Que não faz falta no final<br><br>Uma não existência<br>Sem consciência<br>digítos enviados ao terminal<br><br>Bytes de códigos<br>Constroem o meu lar<br>Mas é uma pena<br> Que sites não podem chorar<br>Não existo, menos mal...<br>Mas aqui estão minhas memórias<br>Quem sou eu afinal?<br><br><i>Clique nas fotos para interagir com as memórias.<br>cmd: <u>proxima</u> <u>sair</u></i></div>'
-                element.append(div);
+
+
             }
         }
         
@@ -272,7 +270,24 @@
         numero = Math.floor(Math.random() * 2);
         var imgs = ["arquivos/1Fotos/Foto1.png","arquivos/1Fotos/Foto2.png"]
         document.getElementById("ato01").src = imgs[numb];
+        ////////////////////////////
+        if(numb == 0){
+            var div = document.createElement("div");
+            div.innerHTML = '</div id="poesia"><br>Não existo, menos mal...<br>Mas aqui estão minhas memórias<br>Quem sou eu afinal?<br><br>Uma não existência<br>Sem consciência<br>digítos enviados ao terminal<br></u></div>'
+
+            element.append(div);
+        } else if (numb >= 1){
+            console.log("poesia")
+            var div = document.createElement("div");
+            div.innerHTML = '</div id="poesia"><br><div class="pulse">Quem?</div><br>Quem eu sou, afinal?<br>Um não alguém<br>Que não diz amém<br>Que não faz falta no final<br><br>Bytes de códigos<br>Constroem o meu lar<br>Mas é uma pena<br> Que sites não podem chorar<br></div>'
+
+            element.append(div);
+        };
+
+
     }
+
+    
 
     // 'Getting' data-attributes using getAttribute
 var plant = document.getElementById('strawberry-plant');

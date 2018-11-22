@@ -326,4 +326,54 @@ from{border-right-color: rgba(255,255,255,.75);}
 to{border-right-color: transparent;}
 }
 
-.mut{};
+
+.pulse {
+  animation: pulse 1s infinite;
+
+  display: table;
+  animation-direction: alternate;
+  -webkit-animation-name: neon1;
+  animation-name: neon1;
+}
+/*
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-transform: scale(1);
+    -webkit-filter: brightness(100%);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    -webkit-filter: brightness(500%);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    filter: brightness(100%);
+  }
+  100% {
+    transform: scale(1);
+    filter: brightness(5000%);
+  }
+}
+*/
+@-webkit-keyframes neon1 {
+  from {
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px white;
+    }
+    to {
+      text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px white;
+    }
+  }
+
+
+
+@keyframes neon1 {
+  from {
+    text-shadow: 0 0 0px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px white;
+  }
+  to {
+    text-shadow: 0 0 0px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px white;
+  }
+}
